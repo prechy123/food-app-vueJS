@@ -9,7 +9,7 @@
   <template v-else>
     <div className="signup" v-if="signup">
       <h2>Create a new account</h2>
-      <form>
+      <form @submit.prevent="createAccountHandler">
         <div className="inputbox">
           <input
             id="email"
@@ -25,7 +25,7 @@
             id="password"
             type="password"
             name="password"
-            v-model="passward"
+            v-model="password"
             minLength="{10}"
             required
           />
@@ -36,7 +36,7 @@
     </div>
     <div className="login" v-if="login">
       <h2>Log in to account</h2>
-      <form>
+      <form @submit.prevent="loginAccountHandler">
         <div className="inputbox">
           <input
             id="email"
@@ -52,7 +52,7 @@
             id="password"
             type="password"
             name="password"
-            v-model="passward"
+            v-model="password"
             minLength="{10}"
             required
           />
@@ -79,9 +79,17 @@ export default {
   data() {
     return {
       email: "",
-      passward: "",
+      password: "",
     };
   },
+  methods: {
+    loginAccountHandler() {
+      this.loginAccount(this.email, this.password)
+    },
+    createAccountHandler() {
+      this.createAccount(this.email, this.password)
+    }
+  }
 };
 </script>
 
