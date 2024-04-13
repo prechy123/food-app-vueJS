@@ -8,7 +8,7 @@
       <h1>{{ food.strMeal }}</h1>
       <p>{{ formatedDate() }}</p>
     </a>
-    <button @click="handleDelete"><span></span>Delete</button>
+    <button @click="handleDelete"><span></span><p>Delete</p></button>
   </div>
 </template>
 
@@ -66,7 +66,6 @@ a {
 .content-container-child .img {
   width: 100%;
   height: 80px;
-  /* background-color: var(--color1); */
   display: flex;
   justify-content: space-between;
   align-items: last baseline;
@@ -91,11 +90,16 @@ a {
   height: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 2;
   background-color: rgb(190, 94, 94);
   transition: height 1s ease;
 }
 .content-container-child button:hover span {
   height: 100%;
+}
+.content-container-child button:hover p {
+  position: relative;
+  z-index: 44;
+  color: aliceblue;
 }
 </style>
