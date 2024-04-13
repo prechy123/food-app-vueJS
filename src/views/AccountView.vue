@@ -1,5 +1,5 @@
 <template>
-  <template v-if="isAuthenticated"> 
+  <template v-if="isAuthenticated">
     <SaveAccountCom />
   </template>
   <template v-else>
@@ -36,7 +36,7 @@
 <script>
 import LoginSignup from "@/components/AccountPage/LoginSignup.vue";
 import axios from "axios";
-import SaveAccountCom from '@/components/AccountPage/SaveAccountCom.vue';
+import SaveAccountCom from "@/components/AccountPage/SaveAccountCom.vue";
 export default {
   components: { LoginSignup, SaveAccountCom },
   data() {
@@ -65,6 +65,7 @@ export default {
         email,
         password,
       };
+      this.loadingState = true;
       axios
         .post("https://foodapp-api-41m2.onrender.com/signupAccount", account, {
           withCredentials: true,
@@ -94,6 +95,7 @@ export default {
         email,
         password,
       };
+      this.loadingState = true;
       axios
         .post("https://foodapp-api-41m2.onrender.com/loginAccount", account, {
           withCredentials: true,

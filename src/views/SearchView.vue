@@ -69,7 +69,7 @@ export default {
 }
 #search-page .component {
   width: 100%;
-  height: calc(100vh - 240px);
+  height: calc(100vh - 260px);
   /* width: 100dvw; */
   /* height: auto; */
   display: grid;

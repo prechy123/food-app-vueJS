@@ -129,7 +129,7 @@ export default {
     transition: 500ms;
 }
 .login-signup #submit:hover{
-    border: 2px solid var(--color3);
+    border: 2px solid var(--color2);
     border-radius: 5px;
 }
 .login-signup .inputbox span {
@@ -151,20 +151,20 @@ export default {
     transform: translateX(10px) translateY(-7px);
     font-size: 0.65em;
     padding: 0 10px;
-    background-color: white;
-    border-left: 4px solid var(--color3);
-    border-right: 4px solid var(--color3);
+    background-color: var(--color2);
+    border-left: 4px solid var(--color2);
+    border-right: 4px solid var(--color2);
     letter-spacing: 0.2em;
 }
 .login-signup .inputbox input:focus,
 .login-signup .inputbox input:valid {
-    border: 2px solid var(--color3);
+    border: 2px solid var(--color2);
 }
 #account-page div .login-signup .loading-state span {
     height: 10px;
     width: 80px;
     display: block;
-    background-color: var(--color1);
+    background-color: var(--color);
     animation: loading-span 1s ease-out infinite alternate;
 }
 @keyframes loading-span {
