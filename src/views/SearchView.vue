@@ -58,8 +58,8 @@ export default {
 #search-page {
   width: 100vw;
   width: 100dvw;
-  height: calc(100vh - 124px);
-  height: calc(100dvh - 124px);
+  height: calc(100vh - 144px);
+  height: calc(100dvh - 144px);
   background-color: var(--color3);
 }
 #search-page div {
