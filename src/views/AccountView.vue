@@ -1,38 +1,44 @@
 <template>
-  <section id="account-page">
-    <div>
-      <div className="title">
-        <h1>Already have an account</h1>
-        <div>
-          <button @click="handleLogin">
-            <span className="first"></span>
-            <p>login</p>
-          </button>
-          <button @click="handleSignup">
-            <span className="second"></span>
-            <p>Signup</p>
-          </button>
+  <template v-if="isAuthenticated"> 
+    <SaveAccountCom />
+  </template>
+  <template v-else>
+    <section id="account-page">
+      <div>
+        <div className="title">
+          <h1>Already have an account</h1>
+          <div>
+            <button @click="handleLogin">
+              <span className="first"></span>
+              <p>login</p>
+            </button>
+            <button @click="handleSignup">
+              <span className="second"></span>
+              <p>Signup</p>
+            </button>
+          </div>
+        </div>
+        <div className="login-signup">
+          <LoginSignup
+            :login="login"
+            :signup="signup"
+            :createAccount="createAccount"
+            :loginAccount="loginAccount"
+            :loadingState="loadingState"
+            :message="message"
+          />
         </div>
       </div>
-      <div className="login-signup">
-        <LoginSignup
-          :login="login"
-          :signup="signup"
-          :createAccount="createAccount"
-          :loginAccount="loginAccount"
-          :loadingState="loadingState"
-          :message="message"
-        />
-      </div>
-    </div>
-  </section>
+    </section>
+  </template>
 </template>
 
 <script>
 import LoginSignup from "@/components/AccountPage/LoginSignup.vue";
-import axios from 'axios';
+import axios from "axios";
+import SaveAccountCom from '@/components/AccountPage/SaveAccountCom.vue';
 export default {
-  components: { LoginSignup },
+  components: { LoginSignup, SaveAccountCom },
   data() {
     return {
       login: false,
