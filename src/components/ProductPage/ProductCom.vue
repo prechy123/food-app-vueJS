@@ -7,10 +7,14 @@
       <em>{{ meal.strArea }}</em>
       <p>{{ meal.strInstructions }}</p>
       <button @click="handleAddClick" className="save-food">
-        <span></span> <p>Save Food</p>
+        <span></span>
+        <p>Save Food</p>
       </button>
       <template v-if="loading">
-        <h1 class="loading">Hold on, food is saving<span></span></h1>
+        <div class="loading">
+          Hold on, food is saving...<br />Be patient while backend starts up, it
+          may take up to a minute
+        </div>
       </template>
       <template v-if="success">
         <h1 className="success">
@@ -33,7 +37,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   name: "productComponent",
   props: ["meal"],
@@ -57,9 +61,9 @@ export default {
           this.loading = false;
           const message = res.data.message;
           if (message === "account not found") {
-            this.error = true
+            this.error = true;
           } else {
-            this.success = true
+            this.success = true;
           }
         })
         .catch((error) => {

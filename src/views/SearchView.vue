@@ -70,8 +70,7 @@ export default {
 #search-page .component {
   width: 100%;
   height: calc(100vh - 260px);
-  /* width: 100dvw; */
-  /* height: auto; */
+  height: calc(100dvh - 260px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
